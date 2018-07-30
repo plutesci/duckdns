@@ -11,7 +11,7 @@ DUCKDNS=( "sub1.duckdns.org"
         "sub4.duckdns.org" )
 
 function resolveIP () {
-    CURRENT_IP=$(dig +cookie "$1")
+    CURRENT_IP=$(dig +short ; dig +identify "$1")
     # CURRENT_IP=$(dig +crypto "$1")
 echo "$CURRENT_IP"
 }
